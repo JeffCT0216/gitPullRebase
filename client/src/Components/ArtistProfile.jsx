@@ -29,6 +29,15 @@ class ArtistProfile extends React.Component {
         this.setState({
           chatrooms: returnedChatrooms
         });
+        // let user_id = chatroomsObj.data.user_id;
+        // console.log('user id in chatroom', chatroomsObj.data);
+        // axios({
+        //   method: "post",
+        //   url: "/messageSender",
+        //   data: { user_id: user_id }
+        // }).then(userObj => {
+        //   console.log(userObj);
+        // })
       });
     });
   }

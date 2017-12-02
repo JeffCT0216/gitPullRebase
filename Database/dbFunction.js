@@ -86,6 +86,11 @@ const getCurrentUser = facebookId => table.User.forge()
   .query()
   .select();
 
+const getMessageSender = userid => table.User.forge()
+  .where('id', '=', userid)
+  .query()
+  .select();
+
 module.exports.saveUser = saveUser;
 module.exports.checkArtistTable = checkArtistTable;
 module.exports.checkUsersTable = checkUsersTable;
@@ -95,3 +100,4 @@ module.exports.getTracks = getTracks;
 module.exports.getChatrooms = getChatrooms;
 module.exports.getCurrentUser = getCurrentUser;
 module.exports.getArtistChatrooms = getArtistChatrooms;
+module.exports.getMessageSender = getMessageSender;
