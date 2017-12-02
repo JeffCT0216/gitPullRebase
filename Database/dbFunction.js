@@ -73,6 +73,11 @@ const getChatrooms = userId => table.Requested_Gigs.forge()
   .query()
   .select();
 
+const getArtistChatrooms = userId => table.Requested_Gigs.forge()
+  .where('artist_id', '=', userId)
+  .query()
+  .select();
+
 /** getCurrentUser gets the specified user from the Users table using their Facebook ID
  * @param  {string} facebookId the user's facebookId
  */
@@ -89,3 +94,4 @@ module.exports.getArtistsByGenre = getArtistsByGenre;
 module.exports.getTracks = getTracks;
 module.exports.getChatrooms = getChatrooms;
 module.exports.getCurrentUser = getCurrentUser;
+module.exports.getArtistChatrooms = getArtistChatrooms;

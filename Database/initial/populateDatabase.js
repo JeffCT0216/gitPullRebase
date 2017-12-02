@@ -34,11 +34,8 @@ exports.up = function (knex, Promise) {
         .unsigned()
         .references('id')
         .inTable('artist');
-      table
-        .integer('date_id')
-        .unsigned()
-        .references('id')
-        .inTable('date');
+      table.string('booking_date')
+      table.string('message_stamp')
       table
         .integer('user_id')
         .unsigned()

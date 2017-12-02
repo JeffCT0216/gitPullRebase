@@ -235,6 +235,10 @@ hr {
   cursor: pointer;
 }
 
+.artist-chat {
+  color: black;
+}
+
 /*Song Styles*/
 .modal-body {
   color: black;

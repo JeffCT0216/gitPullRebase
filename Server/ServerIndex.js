@@ -18,7 +18,7 @@ const getTracks = require("../Database/dbFunction.js").getTracks;
 const getChatrooms = require("../Database/dbFunction.js").getChatrooms;
 const getCurrentUser = require("../Database/dbFunction.js").getCurrentUser;
 const getChatrooms2 = require("../Database/dbFunction.js").getChatrooms2;
-
+const getArtistChatrooms = require("../Database/dbFunction.js").getArtistChatrooms;
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/../client/dist"));
 
@@ -121,6 +121,14 @@ app.post("/chatrooms", (req, res) => {
     res.json(chatroomsObj);
   });
 });
+
+app.post("/artistChatrooms", (req, res) => {
+  let userId = req.body.userId;
+  getArtistChatrooms(userId).then(chatroomsObj => {
+    res.json(chatroomsObj);
+  });
+});
+
 
 app.post("/currentUser", (req, res) => {
   let facebookId = req.body.facebookId;

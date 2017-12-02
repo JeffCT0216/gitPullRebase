@@ -21,9 +21,10 @@ class ArtistProfile extends React.Component {
       let userId = userObj.data[0].id;
       axios({
         method: "post",
-        url: "/chatrooms",
+        url: "/artistChatrooms",
         data: { userId: userId }
       }).then(chatroomsObj => {
+        console.log('chats for artist', chatroomsObj);
         let returnedChatrooms = chatroomsObj.data;
         this.setState({
           chatrooms: returnedChatrooms

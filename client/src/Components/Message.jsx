@@ -5,9 +5,9 @@ const Message = props => {
   if (isArtist) {
     return (
       <div className="card">
-        <div className="card-header">New request!</div>
+        <div className="card-header artist-chat">New request!</div>
         <div class="card-body">
-          <p className="card-text">{props.chatroom.message}</p>
+          <p className="card-text artist-chat">{props.chatroom.message}</p>
           <button
             onClick={props.acceptClickHandler}
             className="btn btn-primary accept"
