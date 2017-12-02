@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-
+import Moment from 'moment';
 const customStyles = {
   content: {
     top: '75%',
@@ -26,13 +26,16 @@ class Book extends React.Component {
     this.state = {
       input: '',
       msgStat: '',
+      date: Moment().format().split('T')[0],
     };
   }
   change(e) {
     this.setState({
       input: e.target.value,
     });
-    console.log('state in book', this.state.input);
+  }
+  dateChange(e) {
+    this.setState({ date: e.target.value });
   }
   onSubmit() {
     if (this.state.input === '') {
@@ -45,7 +48,6 @@ class Book extends React.Component {
         input: '',
         msgStat: 'success',
       });
-      console.log('this is current state', this.state);
       this.props.onClick(input);
     }
   }
@@ -67,6 +69,8 @@ class Book extends React.Component {
         </p>
       );
     }
+    let dateToday = Moment().format().split('T')[0];
+    console.log('date type', dateToday);
     return (
       <div>
         <ReactModal
@@ -77,6 +81,7 @@ class Book extends React.Component {
           style={customStyles}
         >
           <h4 className="book message">To {this.props.artist}</h4>
+          <input type="date" min={dateToday} value={this.state.date} onChange={this.dateChange.bind(this)} />
           <textarea
             id="book-message-textbox"
             color="black"
