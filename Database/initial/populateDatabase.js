@@ -51,14 +51,23 @@ exports.up = function (knex, Promise) {
       table.string('single_id');
       table.string('artist');
     }),
-    knex.schema.createTable('artist_genre', function(table) {
+    knex.schema.createTable('artist_genre', (table) => {
       table.increments('id').primary();
       table.string('genre');
       table.string('username');
       table.string('city');
       table.string('image');
       table.string('uri');
-    })
+    }),
+    knex.schema.createTable('booking_date', (table) => {
+      table.increments('id').primary();
+      table
+        .integer('artist_id')
+        .unsigned()
+        .references('id')
+        .inTable('artist');
+      table.string('date');
+    }),
   ]);
 };
 
@@ -77,5 +86,6 @@ exports.down = function (knex, Promise) {
       .dropTable('requested_gigs')
       .dropTable('single')
       .dropTable('artist_genre')
+      .dropTable('booking_date')
   );
 };

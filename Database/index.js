@@ -35,8 +35,12 @@ const Single = bookshelf.Model.extend({
   tableName: 'single',
 });
 
-let Artist_Genre = bookshelf.Model.extend({
-  tableName: "artist_genre"
+const Artist_Genre = bookshelf.Model.extend({
+  tableName: 'artist_genre',
+});
+
+const Booking_Date = bookshelf.Model.extend({
+  tableName: 'booking_date',
 });
 
 module.exports.knex = knex;
@@ -47,6 +51,7 @@ module.exports.Artist_Availability = Artist_Availability;
 module.exports.Requested_Gigs = Requested_Gigs;
 module.exports.Single = Single;
 module.exports.User = User;
+module.exports.Booking_Date = Booking_Date;
 
 /*
 	TO CONNECT VIA TERMINAL (password might be different for each user)

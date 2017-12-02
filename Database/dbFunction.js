@@ -12,7 +12,7 @@ const saveUser = (name, token, facebookId, boolean) => {
   this.checkUsersTable(facebookId).then((userObj) => {
     if (userObj === null || userObj.length < 1) {
       new table.User({
-        facebookID: facebookId,
+        facebook_id: facebookId,
         username: name,
         token,
         role: boolean,

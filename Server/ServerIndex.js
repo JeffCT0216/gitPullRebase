@@ -89,7 +89,7 @@ app.post("/user", (req, res) => {
 app.post("/initialLogin", (req, res) => {
   let token = req.body.accessToken;
   let name = req.body.username;
-  let facebookID = req.body.facebookID;
+  let facebook_id = req.body.facebookID;
 
   //check if user is an artist in our "artist" table
   checkArtistTable(name)
@@ -101,7 +101,7 @@ app.post("/initialLogin", (req, res) => {
         bool = false;
       }
       //save user into users database
-      saveUser(name, token, facebookID, bool);
+      saveUser(name, token, facebook_id, bool);
     })
     .then(() => {
       res.send();

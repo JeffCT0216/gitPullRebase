@@ -70,7 +70,6 @@ class Book extends React.Component {
       );
     }
     let dateToday = Moment().format().split('T')[0];
-    console.log('date type', dateToday);
     return (
       <div>
         <ReactModal
