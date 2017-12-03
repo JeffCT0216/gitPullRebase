@@ -10,14 +10,14 @@ const ArtistList = props => {
         {props.isRenderingByGenre ? props.artistByGenre.map((artist, index) => {
           if (artist.city === props.city) {
             return (
-              <li key={index}>
+              <div key={index}>
                 <Artist
                   facebookId={props.facebookId}
                   artist={artist}
                   setTracks={props.setTracks}
                   setArtist={props.setArtist}
                 />
-              </li>
+              </div>
             );
           }
         }) : props.artists.map((artist, index) => {

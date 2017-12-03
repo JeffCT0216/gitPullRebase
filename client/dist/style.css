@@ -166,10 +166,6 @@ h4 {
 .bookBtn:hover {
   background-color: #03964f;
   cursor: pointer;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 30px;
 }
 
 .artistList {
@@ -265,6 +261,9 @@ hr {
 }
 #errmessage {
   color: red;
+}
+.book.artirst {
+  color: white;
 }
 
 /*Message Styles*/

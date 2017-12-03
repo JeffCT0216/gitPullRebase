@@ -9,6 +9,7 @@ const customStyles = {
     bottom: 'auto',
     position: 'fixed',
     transform: 'translate(-50%, -50%)',
+    backgroundColor: '#474a4f'
   },
   overlay: {
     position: 'fixed',
@@ -16,8 +17,8 @@ const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(255, 255, 255, 0)',
-  },
+    backgroundColor: 'rgba(255, 255, 255, 0)'
+  }
 };
 
 class Book extends React.Component {
@@ -79,7 +80,7 @@ class Book extends React.Component {
           contentLabel="Book Now Modal"
           style={customStyles}
         >
-          <h4 className="book message">To {this.props.artist}</h4>
+          <h4 className="book artist">To {this.props.artist}</h4>
           <input type="date" min={dateToday} value={this.state.date} onChange={this.dateChange.bind(this)} />
           <textarea
             id="book-message-textbox"
